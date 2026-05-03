@@ -122,7 +122,14 @@ app.use("/map", express.static(join(__dirname, "..", "map")));
 app.use("/dashboard", express.static(join(__dirname, "..", "dashboard")));
 
 // -------- DEFAULT ROUTE --------
+// -------- DEFAULT ROUTE --------
+app.use(express.static(path.join(__dirname, '..', 'Index')));
 app.use(express.static(path.join(__dirname, '..')));
+app.use('/Photos', express.static(path.join(__dirname, '..', 'Photos')));
+app.use('/register', express.static(path.join(__dirname, '..', 'register')));
+app.use('/sitter', express.static(path.join(__dirname, '..', 'sitter')));
+app.use('/admin', express.static(path.join(__dirname, '..', 'admin')));
+app.use('/blog', express.static(path.join(__dirname, '..', 'blog')));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'Index', 'index.html'));
