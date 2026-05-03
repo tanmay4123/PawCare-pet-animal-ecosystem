@@ -1,5 +1,5 @@
 import express from "express";
-import Donation from "/models/Donation.js";
+import Donation from "../models/Donation.js";
 import { createOrder, getOrder, verifyWebhookSignature } from "/utils/cashfree.js";
 
 const router = express.Router();
