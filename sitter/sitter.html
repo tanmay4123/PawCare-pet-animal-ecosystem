@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawCare — Find a Pet Sitter or Daycare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sitter.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot"  id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- SCROLL BAR -->
+  <div class="scroll-bar" id="scrollBar"></div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- BG BLOBS -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Book a Sitter</h3>
+      <p class="sub" id="modalSub">Fill in your details and we'll confirm within 2 hours.</p>
+      <form class="modal-form" id="bookingForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="bName" placeholder="Priya Mehta" required>
+          </div>
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="bPhone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Pet Name & Breed</label>
+          <input type="text" id="bPet" placeholder="Max — Golden Retriever" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Start Date</label>
+            <input type="date" id="bStart" required>
+          </div>
+          <div class="form-group">
+            <label>End Date</label>
+            <input type="date" id="bEnd" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Notes</label>
+          <textarea placeholder="Dietary needs, vet info, medications…" rows="3"></textarea>
+        </div>
+        <button type="submit" class="modal-submit">🐾 Confirm Booking Request</button>
+      </form>
+      <div class="modal-success" id="modalSuccess">
+        <span class="big-emoji">🎉</span>
+        <h4>Booking Request Sent!</h4>
+        <p>Your sitter will confirm within 2 hours.<br>Check your phone for a WhatsApp message.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ══════ NAV ══════ -->
+    <nav class="nav" id="mainNav">
+      <a href="../Index/index.html" class="brand">
+        <div class="logo-blob">🐾</div>
+        <h1>Paw<span>Care</span></h1>
+      </a>
+      <div class="nav-links">
+        <a href="../home/home.html">Home</a>
+        <a href="../about/about.html">About</a>
+        <a href="../donation/donation.html">Donate</a>
+        <a href="../map/map.html">Care Support</a>
+        <a href="../blog/blog.html">Blog</a>
+        <a href="sitter.html" class="active">Sitters</a>
+        <a href="../register/register.html">Sign Up</a>
+      </div>
+    </nav>
+
+    <!-- ══════ HERO ══════ -->
+    <section class="sitter-hero">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">🏠 Trusted Pet Care · Verified Sitters</div>
+        <h1>Your Pet Deserves the Best Care <em>While You're Away</em></h1>
+        <p class="hero-desc">Find verified, loving pet sitters and cozy daycare homes near you. Whether you're on a weekend trip or a month-long holiday — your furry family member will be in safe, caring hands.</p>
+
+        <div class="trust-row">
+          <div class="trust-badge"><span class="icon">✅</span> 100% Verified Sitters</div>
+          <div class="trust-badge"><span class="icon">🛡️</span> Insurance Covered</div>
+          <div class="trust-badge"><span class="icon">📸</span> Daily Photo Updates</div>
+          <div class="trust-badge"><span class="icon">⭐</span> 4.9 Avg Rating</div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#listings" class="btn-primary">🔍 Find a Sitter</a>
+          <a href="#become" class="btn-outline">Become a Sitter →</a>
+        </div>
+      </div>
+
+      <!-- RIGHT — floating pet cards -->
+      <div class="hero-right">
+        <div class="floating-cards">
+
+          <div class="fcard">
+            <img class="fcard-photo" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80" alt="sitter">
+            <div class="fcard-name">Sneha R.</div>
+            <div class="fcard-type">🏠 Home Sitter · Pune</div>
+            <div class="fcard-stars">★★★★★ 4.9</div>
+          </div>
+
+          <div class="fcard">
+            <img class="fcard-photo" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80" alt="daycare">
+            <div class="fcard-name">Happy Paws Daycare</div>
+            <div class="fcard-type">☀️ Daycare · Mumbai</div>
+            <div class="fcard-stars">★★★★★ 5.0</div>
+          </div>
+
+          <div class="fcard">
+            <img class="fcard-photo" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=400&q=80" alt="sitter">
+            <div class="fcard-name">Rahul K.</div>
+            <div class="fcard-type">🐕 Dog Specialist · Delhi</div>
+            <div class="fcard-stars">★★★★★ 4.8</div>
+          </div>
+
+          <div class="fcard">
+            <img class="fcard-photo" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80" alt="cats">
+            <div class="fcard-name">Meow Manor</div>
+            <div class="fcard-type">🐱 Cat Specialist · Bengaluru</div>
+            <div class="fcard-stars">★★★★☆ 4.7</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ SEARCH BAR ══════ -->
+    <div class="search-band">
+      <div class="search-inner">
+        <div class="search-field">
+          <label>Your City</label>
+          <input type="text" id="srchCity" placeholder="Mumbai, Pune, Delhi…">
+        </div>
+        <div class="search-field">
+          <label>Pet Type</label>
+          <select id="srchPet">
+            <option value="">Any Pet</option>
+            <option>🐕 Dog</option>
+            <option>🐈 Cat</option>
+            <option>🐇 Rabbit</option>
+            <option>🐦 Bird</option>
+            <option>🐠 Fish</option>
+            <option>🐹 Small Pet</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Service Type</label>
+          <select id="srchType">
+            <option value="">All Types</option>
+            <option value="sitter">🏠 Home Sitter</option>
+            <option value="daycare">☀️ Daycare</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>From</label>
+          <input type="date" id="srchFrom">
+        </div>
+        <div class="search-field">
+          <label>To</label>
+          <input type="date" id="srchTo">
+        </div>
+        <button class="search-btn" id="searchBtn">🔍 Search</button>
+      </div>
+    </div>
+
+    <!-- ══════ HOW IT WORKS ══════ -->
+    <div class="section-head">
+      <div class="section-tag">🗺️ Simple Process</div>
+      <h2>How It <em>Works</em></h2>
+      <p>Finding the perfect care for your pet takes less than 3 minutes.</p>
+    </div>
+    <section class="steps-section">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <span class="step-icon">🔍</span>
+          <h4>Search & Filter</h4>
+          <p>Enter your city, pet type and dates. Browse verified sitters and daycares with real photos and reviews.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <span class="step-icon">💬</span>
+          <h4>Chat & Meet</h4>
+          <p>Message your chosen sitter directly. Arrange a free meet-and-greet so your pet feels comfortable before the stay.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <span class="step-icon">📅</span>
+          <h4>Book & Pay</h4>
+          <p>Confirm your dates and make a secure payment. Your booking is protected by PawCare's guarantee policy.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <span class="step-icon">📸</span>
+          <h4>Relax & Receive Updates</h4>
+          <p>Your sitter sends daily photo and video updates. Enjoy your trip knowing your pet is loved and cared for.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ LISTINGS ══════ -->
+    <div class="section-head" id="listings">
+      <div class="section-tag">🐾 Browse Listings</div>
+      <h2>Pet Sitters & <em>Daycare Homes</em></h2>
+      <p>All carers are background-checked, reviewed and insured through PawCare.</p>
+    </div>
+
+    <section class="tab-section">
+
+      <!-- Tab bar -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="all">🐾 All Listings</button>
+        <button class="tab-btn" data-tab="sitter">🏠 Home Sitters</button>
+        <button class="tab-btn" data-tab="daycare">☀️ Daycare Homes</button>
+      </div>
+
+      <!-- ALL panel (default) -->
+      <div class="tab-panel active" id="tab-all">
+        <div class="listing-grid" id="mainGrid">
+
+          <!-- ── LISTING 1 ── -->
+          <div class="listing-card" data-kind="sitter">
+            <div class="lcard-photo">
+              <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="Sneha home">
+              <div class="photo-grad"></div>
+              <span class="lcard-type type-sitter">🏠 Home Sitter</span>
+              <span class="lcard-price">₹350 / night</span>
+              <span class="avail-dot open"></span>
+            </div>
+            <div class="lcard-body">
+              <div class="lcard-top">
+                <img class="lcard-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="Sneha">
+                <div class="lcard-info">
+                  <div class="lcard-name">Sneha Rajput</div>
+                  <div class="lcard-loc">📍 Koregaon Park, Pune</div>
+                </div>
+              </div>
+              <div class="star-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-num">4.9</span>
+                <span class="review-cnt">(86 reviews)</span>
+              </div>
+              <p class="lcard-desc">Passionate animal lover with 4 years of pet-sitting experience. My apartment is pet-proofed with a big balcony. I send 3–4 updates daily and treat every pet like my own.</p>
+              <div class="pet-tags">
+                <span class="pet-tag">🐕 Dogs</span>
+                <span class="pet-tag">🐈 Cats</span>
+                <span class="pet-tag">🐇 Rabbits</span>
+              </div>
+              <div class="amenities">
+                <span class="amenity">🛏️ Indoor stay</span>
+                <span class="amenity">🚶 2x daily walks</span>
+                <span class="amenity">📸 Daily updates</span>
+                <span class="amenity">🧸 Toys provided</span>
+              </div>
+            </div>
+            <div class="lcard-footer">
+              <span class="avail-label open"><span class="dot"></span> Available Now</span>
+              <button class="save-btn" data-id="1" aria-label="Save">🤍</button>
+              <button class="book-btn" data-name="Sneha Rajput" data-type="Home Sitter">📅 Book</button>
+            </div>
+          </div>
+
+          <!-- ── LISTING 2 ── -->
+          <div class="listing-card" data-kind="daycare">
+            <div class="lcard-photo">
+              <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80" alt="Happy Paws">
+              <div class="photo-grad"></div>
+              <span class="lcard-type type-daycare">☀️ Daycare</span>
+              <span class="lcard-price">₹500 / day</span>
+              <span class="avail-dot open"></span>
+            </div>
+            <div class="lcard-body">
+              <div class="lcard-top">
+                <img class="lcard-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80" alt="Priya">
+                <div class="lcard-info">
+                  <div class="lcard-name">Happy Paws Daycare</div>
+                  <div class="lcard-loc">📍 Bandra West, Mumbai</div>
+                </div>
+              </div>
+              <div class="star-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-num">5.0</span>
+                <span class="review-cnt">(142 reviews)</span>
+              </div>
+              <p class="lcard-desc">Professional daycare in a spacious 3-BHK with a garden. Open 7 days a week. Capacity: 8 dogs max so every pet gets personal attention. Vet on-call 24/7.</p>
+              <div class="pet-tags">
+                <span class="pet-tag">🐕 Dogs</span>
+                <span class="pet-tag">🐕‍🦺 All sizes</span>
+              </div>
+              <div class="amenities">
+                <span class="amenity">🌿 Garden play area</span>
+                <span class="amenity">🏥 Vet on-call</span>
+                <span class="amenity">🍖 Meals included</span>
+                <span class="amenity">🎥 Live camera</span>
+              </div>
+            </div>
+            <div class="lcard-footer">
+              <span class="avail-label open"><span class="dot"></span> Available Now</span>
+              <button class="save-btn" data-id="2" aria-label="Save">🤍</button>
+              <button class="book-btn" data-name="Happy Paws Daycare" data-type="Daycare Home">📅 Book</button>
+            </div>
+          </div>
+
+          <!-- ── LISTING 3 ── -->
+          <div class="listing-card" data-kind="sitter">
+            <div class="lcard-photo">
+              <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&q=80" alt="Rahul">
+              <div class="photo-grad"></div>
+              <span class="lcard-type type-sitter">🏠 Home Sitter</span>
+              <span class="lcard-price">₹400 / night</span>
+              <span class="avail-dot few"></span>
+            </div>
+            <div class="lcard-body">
+              <div class="lcard-top">
+                <img class="lcard-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80" alt="Rahul">
+                <div class="lcard-info">
+                  <div class="lcard-name">Rahul Kapoor</div>
+                  <div class="lcard-loc">📍 Hauz Khas, Delhi</div>
+                </div>
+              </div>
+              <div class="star-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-num">4.8</span>
+                <span class="review-cnt">(54 reviews)</span>
+              </div>
+              <p class="lcard-desc">Dog behaviourist with 6 years experience. I specialise in anxious and reactive dogs — your nervous pup will feel calm and safe in my home environment.</p>
+              <div class="pet-tags">
+                <span class="pet-tag">🐕 Dogs only</span>
+                <span class="pet-tag">🧠 Anxiety care</span>
+              </div>
+              <div class="amenities">
+                <span class="amenity">🐕 Dog-only home</span>
+                <span class="amenity">🌳 Park nearby</span>
+                <span class="amenity">📹 Video updates</span>
+                <span class="amenity">🎓 Trained</span>
+              </div>
+            </div>
+            <div class="lcard-footer">
+              <span class="avail-label few"><span class="dot"></span> 2 Spots Left</span>
+              <button class="save-btn" data-id="3" aria-label="Save">🤍</button>
+              <button class="book-btn" data-name="Rahul Kapoor" data-type="Home Sitter">📅 Book</button>
+            </div>
+          </div>
+
+          <!-- ── LISTING 4 ── -->
+          <div class="listing-card" data-kind="daycare">
+            <div class="lcard-photo">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&q=80" alt="Meow Manor">
+              <div class="photo-grad"></div>
+              <span class="lcard-type type-daycare">☀️ Daycare</span>
+              <span class="lcard-price">₹450 / day</span>
+              <span class="avail-dot open"></span>
+            </div>
+            <div class="lcard-body">
+              <div class="lcard-top">
+                <img class="lcard-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&q=80" alt="Ananya">
+                <div class="lcard-info">
+                  <div class="lcard-name">Meow Manor</div>
+                  <div class="lcard-loc">📍 Indiranagar, Bengaluru</div>
+                </div>
+              </div>
+              <div class="star-row">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-num">4.7</span>
+                <span class="review-cnt">(38 reviews)</span>
+              </div>
+              <p class="lcard-desc">India's first dedicated cat-only daycare and boarding. Vertical spaces, cat trees, separate private suites — every feline guest is treated like royalty.</p>
+              <div class="pet-tags">
+                <span class="pet-tag">🐈 Cats only</span>
+                <span class="pet-tag">🐱 All breeds</span>
+              </div>
+              <div class="amenities">
+                <span class="amenity">🏯 Cat suites</span>
+                <span class="amenity">🌡️ Climate control</span>
+                <span class="amenity">🧴 Grooming add-on</span>
+                <span class="amenity">📸 Daily pics</span>
+              </div>
+            </div>
+            <div class="lcard-footer">
+              <span class="avail-label open"><span class="dot"></span> Available Now</span>
+              <button class="save-btn" data-id="4" aria-label="Save">🤍</button>
+              <button class="book-btn" data-name="Meow Manor" data-type="Daycare Home">📅 Book</button>
+            </div>
+          </div>
+
+          <!-- ── LISTING 5 ── -->
+          <div class="listing-card" data-kind="sitter">
+            <div class="lcard-photo">
+              <img src="https://images.unsplash.com/photo-1592754862816-1a21a4ea2281?w=600&q=80" alt="Tanya">
+              <div class="photo-grad"></div>
+              <span class="lcard-type type-sitter">🏠 Home Sitter</span>
+              <span class="lcard-price">₹300 / night</span>
+              <span class="avail-dot open"></span>
+            </div>
+            <div class="lcard-body">
+              <div class="lcard-top">
+                <img class="lcard-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&q=80" alt="Tanya">
+                <div class="lcard-info">
+                  <div class="lcard-name">Tanya Sharma</div>
+                  <div class="lcard-loc">📍 Salt Lake, Kolkata</div>
+                </div>
+              </div>
+              <div class="star-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-num">4.9</span>
+                <span class="review-cnt">(72 reviews)</span>
+              </div>
+              <p class="lcard-desc">Vet nurse by training, I care for pets of all kinds including birds and small animals. Your exotic pets are welcome! Medication administration included.</p>
+              <div class="pet-tags">
+                <span class="pet-tag">🐕 Dogs</span>
+                <span class="pet-tag">🐈 Cats</span>
+                <span class="pet-tag">🐦 Birds</span>
+                <span class="pet-tag">🐇 Rabbits</span>
+                <span class="pet-tag">🐹 Small pets</span>
+              </div>
+              <div class="amenities">
+                <span class="amenity">💉 Meds admin</span>
+                <span class="amenity">🏥 Vet trained</span>
+                <span class="amenity">🌿 Garden access</span>
+              </div>
+            </div>
+            <div class="lcard-footer">
+              <span class="avail-label open"><span class="dot"></span> Available Now</span>
+              <button class="save-btn" data-id="5" aria-label="Save">🤍</button>
+              <button class="book-btn" data-name="Tanya Sharma" data-type="Home Sitter">📅 Book</button>
+            </div>
+          </div>
+
+          <!-- ── LISTING 6 ── -->
+          <div class="listing-card" data-kind="daycare">
+            <div class="lcard-photo">
+              <img src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?w=600&q=80" alt="Paws & Play">
+              <div class="photo-grad"></div>
+              <span class="lcard-type type-daycare">☀️ Daycare</span>
+              <span class="lcard-price">₹550 / day</span>
+              <span class="avail-dot busy"></span>
+            </div>
+            <div class="lcard-body">
+              <div class="lcard-top">
+                <img class="lcard-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80" alt="Vikram">
+                <div class="lcard-info">
+                  <div class="lcard-name">Paws & Play Resort</div>
+                  <div class="lcard-loc">📍 Jubilee Hills, Hyderabad</div>
+                </div>
+              </div>
+              <div class="star-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-num">4.8</span>
+                <span class="review-cnt">(119 reviews)</span>
+              </div>
+              <p class="lcard-desc">Premium pet resort with swimming pool, agility course, and trained handlers. Separate zones for large and small dogs. CCTV live-stream access for owners.</p>
+              <div class="pet-tags">
+                <span class="pet-tag">🐕 Dogs</span>
+                <span class="pet-tag">🏊 Pool access</span>
+              </div>
+              <div class="amenities">
+                <span class="amenity">🏊 Dog pool</span>
+                <span class="amenity">🎯 Agility course</span>
+                <span class="amenity">📡 Live CCTV</span>
+                <span class="amenity">🍖 Premium meals</span>
+              </div>
+            </div>
+            <div class="lcard-footer">
+              <span class="avail-label busy"><span class="dot"></span> Fully Booked</span>
+              <button class="save-btn" data-id="6" aria-label="Save">🤍</button>
+              <button class="book-btn" data-name="Paws & Play Resort" data-type="Daycare Home">📮 Waitlist</button>
+            </div>
+          </div>
+
+        </div><!-- /listing-grid -->
+      </div><!-- /tab-panel all -->
+
+      <!-- SITTER panel (filtered by JS) -->
+      <div class="tab-panel" id="tab-sitter"></div>
+      <!-- DAYCARE panel (filtered by JS) -->
+      <div class="tab-panel" id="tab-daycare"></div>
+
+    </section>
+
+    <!-- ══════ WHY PAWCARE ══════ -->
+    <div class="section-head">
+      <div class="section-tag">💜 Our Promise</div>
+      <h2>Why Choose <em>PawCare</em> Sitters?</h2>
+      <p>We don't just list carers — we verify, train and stand behind every single one.</p>
+    </div>
+    <section class="why-section">
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon-wrap wi-purple">🔍</div>
+          <h4>Background Verified</h4>
+          <p>Every sitter and daycare host undergoes a thorough background check and in-person visit from our team before joining PawCare.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap wi-blue">🛡️</div>
+          <h4>Insurance Backed</h4>
+          <p>All bookings are covered by PawCare's pet care insurance policy. If something unexpected happens, you and your pet are protected.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap wi-orange">📸</div>
+          <h4>Daily Photo Updates</h4>
+          <p>Your sitter sends photos and short videos every day so you always know your pet is happy, comfortable and safe.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap wi-green">💰</div>
+          <h4>Price Match Promise</h4>
+          <p>Found a lower price elsewhere? We'll match it. PawCare sitters offer transparent, fair pricing with no hidden fees.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap wi-pink">💬</div>
+          <h4>24/7 Support Chat</h4>
+          <p>Our support team is available around the clock. Message us any time during a booking — we'll respond within 15 minutes.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap wi-teal">🔄</div>
+          <h4>Free Cancellation</h4>
+          <p>Plans change. Cancel up to 48 hours before your booking for a full refund — no questions asked, no hassle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ TESTIMONIALS ══════ -->
+    <div class="section-head">
+      <div class="section-tag">💬 Happy Pet Parents</div>
+      <h2>What Families Are <em>Saying</em></h2>
+    </div>
+    <section class="testi-section">
+      <div class="testi-track-wrap">
+        <div class="testi-track" id="testiTrack">
+
+          <!-- cards duplicated for infinite scroll feel -->
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Sneha looked after Bruno for 10 days while we were in Goa. He came back healthier and happier than ever. Daily photos made us feel at ease the whole trip.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="">
+              <div><div class="testi-name">Ananya Joshi</div><div class="testi-pet">🐕 Bruno, Labrador · Pune</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Happy Paws Daycare is genuinely amazing. Live camera access meant I could check on Max whenever I missed him. Will never use anyone else.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="">
+              <div><div class="testi-name">Rohan Mehta</div><div class="testi-pet">🐕 Max, Beagle · Mumbai</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Meow Manor was perfect for my two cats. Private suites, lots of enrichment. My cats were so relaxed when I picked them up — practically didn't want to leave!</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80" alt="">
+              <div><div class="testi-name">Priya Singh</div><div class="testi-pet">🐱 Luna & Mochi · Bengaluru</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Rahul was incredible with our anxious rescue dog. He used gentle techniques and by day 3 she was playing and relaxed. Absolutely recommend for reactive dogs.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="">
+              <div><div class="testi-name">Kavya Nair</div><div class="testi-pet">🐕 Bella, Rescue Mix · Delhi</div></div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Tanya handled all of Coco's medications perfectly. As a vet nurse she was incredibly professional. My senior dog was in the best possible hands.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="">
+              <div><div class="testi-name">Siddharth Roy</div><div class="testi-pet">🐈 Coco, Senior Cat · Kolkata</div></div>
+            </div>
+          </div>
+
+          <!-- duplicate set for seamless loop -->
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Sneha looked after Bruno for 10 days while we were in Goa. He came back healthier and happier than ever. Daily photos made us feel at ease the whole trip.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="">
+              <div><div class="testi-name">Ananya Joshi</div><div class="testi-pet">🐕 Bruno, Labrador · Pune</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Happy Paws Daycare is genuinely amazing. Live camera access meant I could check on Max whenever I missed him. Will never use anyone else.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="">
+              <div><div class="testi-name">Rohan Mehta</div><div class="testi-pet">🐕 Max, Beagle · Mumbai</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Meow Manor was perfect for my two cats. Private suites, lots of enrichment. My cats were so relaxed when I picked them up — practically didn't want to leave!</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&q=80" alt="">
+              <div><div class="testi-name">Priya Singh</div><div class="testi-pet">🐱 Luna & Mochi · Bengaluru</div></div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">Rahul was incredible with our anxious rescue dog. He used gentle techniques and by day 3 she was playing and relaxed. Absolutely recommend for reactive dogs.</p>
+            <div class="testi-author">
+              <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="">
+              <div><div class="testi-name">Kavya Nair</div><div class="testi-pet">🐕 Bella, Rescue Mix · Delhi</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ BECOME A SITTER CTA ══════ -->
+    <div id="become">
+      <div class="cta-banner">
+        <div class="cta-left">
+          <h2>Love Animals? Earn from Home.</h2>
+          <p>Join 2,000+ PawCare sitters across India. Set your own schedule, rates and rules. We handle payments, insurance and booking management — you just focus on the pets.</p>
+        </div>
+        <div class="cta-right">
+          <a href="../register/register.html" class="btn-white">🐾 Apply to Become a Sitter</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ FAQ ══════ -->
+    <div class="section-head">
+      <div class="section-tag">❓ Common Questions</div>
+      <h2>Frequently Asked <em>Questions</em></h2>
+    </div>
+    <section class="faq-section">
+
+      <div class="faq-item">
+        <div class="faq-q">How are sitters verified on PawCare? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Every sitter goes through a multi-step verification: government ID check, police verification, an in-person home visit by our team, and a pet first-aid quiz. Only those who pass all steps are listed.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if my pet gets sick during the stay? <span class="faq-icon">+</span></div>
+        <div class="faq-a">All bookings include PawCare's emergency vet coverage up to ₹10,000. Your sitter is trained to recognise signs of illness and will contact our 24/7 support line immediately. We have partner vets in 30+ cities.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I visit the sitter's home before booking? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Absolutely — and we strongly encourage it. Every sitter offers a free meet-and-greet so you and your pet can get comfortable with the environment before committing to a booking.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I cancel or change my booking? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Cancel free of charge up to 48 hours before the start of your booking for a full refund. Cancellations within 48 hours receive a 50% refund. Changes to dates are free if the sitter is available.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Are medications and special diets handled? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. When booking, note your pet's dietary needs and medication schedule. Most sitters are trained to handle medication administration. If your pet has complex needs, filter for sitters with "Med admin" in their amenities.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What payment methods are accepted? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We accept UPI, all major credit and debit cards, net banking, and wallets. Payment is held securely and only released to the sitter after your pet's stay begins.</div>
+      </div>
+
+    </section>
+
+    <!-- ══════ FOOTER ══════ -->
+    <footer class="footer">
+      <p>© 2025 PawCare &nbsp;·&nbsp; Built with ❤️ for animals everywhere &nbsp;·&nbsp;
+        <a href="../donation/donation.html">Donate</a> &nbsp;·&nbsp;
+        <a href="../map/map.html">Find a Vet</a> &nbsp;·&nbsp;
+        <a href="../blog/blog.html">Blog</a>
+      </p>
+    </footer>
+
+  </div><!-- /page -->
+
+  <!-- ═══════════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════════ -->
+  <script src="sitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PawCare — Pune Vet Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🐾</div>
+        <div class="brand-text">
+          <div class="site-name">PawCare</div>
+          <h1>🐾 <span>Paw</span>Care</h1>
+        <small>Because every paw deserves love</small>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="/home/home.html">Home</a>
+      <a href="/about/about.html">About</a>
+      <a class="active" href="/donation/donation.html">Donate</a>
+      <a href="/map/map.html">Care Support</a>
+      <a href="/blog/blog.html">Blog</a>
+      <a href="/dashboard/dashboard.html">Dashboard</a>
+    </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout -->
+  <main class="main">
+    <div class="layout fade-in">
+      <!-- Left: Map -->
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+
+      <!-- Right: Info Panel -->
+      <aside class="info-panel">
+        <div class="panel glass hero">
+          <h2>Because every paw deserves love ❤️</h2>
+          <p class="lead">
+            PawCare helps pet parents across <strong>Pune</strong> find trusted, nearby veterinary care — quickly, compassionately, and reliably. 
+            Click any <strong>🐾 paw marker</strong> to explore verified clinic details with contact info and directions.
+          </p>
+
+          <h4>Why PawCare?</h4>
+          <p>
+            Emergencies are stressful. We make sure help is only one tap away — verified vet listings, real-time map, and clear directions, all focused only on <b>Pune city & suburbs</b>.
+          </p>
+
+          <h4>Features</h4>
+          <ul>
+            <li>📍 City-focused vet map with live locations</li>
+            <li>📞 Click-to-call from each popup card</li>
+            <li>🗺️ Instant Google Maps directions</li>
+            <li>💾 Saved coordinates for quick reloading</li>
+            <li>💙 Built & maintained by animal lovers in Pune</li>
+          </ul>
+        </div>
+
+        <!-- Live Status -->
+        <div class="panel glass status">
+          <div><strong>Clinics placed:</strong> <span id="located-count">0</span> / <span id="total-count">20</span></div>
+          <div class="muted">
+            Markers are approximate to neighborhood; please use “Get Directions” for exact location.
+          </div>
+        </div>
+
+        <!-- Support & Info -->
+        <div class="panel glass small">
+          <h4>Need Help?</h4>
+          <p class="muted">
+            📧 <a href="mailto:support@pawcare.in">support@pawcare.in</a><br/>
+            📱 <a href="tel:+919876543210">+91 98765 43210</a><br/>
+            🕐 9 AM – 9 PM, all days
+          </p>
+
+          <h4>Quick Links</h4>
+          <ul class="muted quick-links">
+            <li><a href="/donate.html">Donate to PawCare</a></li>
+            <li><a href="/volunteer.html">Join as a Volunteer</a></li>
+            <li><a href="/about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Awareness Note -->
+        <div class="panel glass small muted">
+          🐶 If you find an injured or stray animal, please contact a local NGO or nearby vet immediately.<br><br>
+          Data by <strong>PawCare</strong> • Map tiles: <em>OpenStreetMap</em>
+        </div>
+      </aside>
+    </div>
+
+    <!-- New Storytelling Section -->
+    <section class="story-section fade-in">
+      <div class="story glass">
+        <h2>🐾 Our Story</h2>
+        <p>
+          PawCare started when a stray kitten named <strong>Mimi</strong> was adopted by us and accidently few months later jumped off from 4th floor Ravet, Pune. 
+          It took nearly an hour to find a vet open nearby — that delay changed how we saw animal care forever.  
+          From that day, PawCare’s mission became clear: <b>make emergency help accessible to every animal in need.</b>
+        </p>
+      </div>
+
+      <div class="feature-cards">
+        <div class="feature-card glass lift">
+          <h3>🚑 Emergency Ready</h3>
+          <p>Find 24/7 vet clinics and hospitals near you instantly with real-time map access.</p>
+        </div>
+        <div class="feature-card glass lift">
+          <h3>🤝 Verified Clinics</h3>
+          <p>All vet listings are verified with their contact numbers, timings, and location details.</p>
+        </div>
+        <div class="feature-card glass lift">
+          <h3>🌍 One-Tap Directions</h3>
+          <p>Open Google Maps directly from clinic cards — no extra searching or confusion.</p>
+        </div>
+      </div>
+
+      <div class="story glass">
+        <h2>💡 How PawCare Helps</h2>
+        <p>
+          Whether it’s an emergency or a routine check-up, PawCare bridges pet owners with trusted local vets.  
+          You focus on caring — we’ll handle the navigation, details, and reliability.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot -->
+  <button id="chatbot" class="chat-btn" title="Chat with PawCare">💬</button>
+
+  <!-- Footer -->
+  <footer class="site-footer">© 2025 PawCare — Made with care in Pune 🐕🐈</footer>
+
+  <script>
+  document.getElementById('chatbot').addEventListener('click', function() {
+    // Redirect to Flask chatbot
+    window.location.href = 'http://127.0.0.1:5001/';  // Make sure your Flask app is running
+  });
+  </script>
+
+  
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Main JS -->
+  <script src="map.js"></script>
+</body>
+</html>

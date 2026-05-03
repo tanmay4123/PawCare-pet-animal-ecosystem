@@ -1,0 +1,187 @@
+:root{
+  --bg1: #E9F4FF;   /* pastel blue */
+  --bg2: #F0EBFF;   /* lavender */
+  --accent: #7A77D9;/* deep lavender */
+  --accent-2: #4A47A3;
+  --white: #ffffff;
+  --muted: #586173;
+  --glass: rgba(255,255,255,0.72);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:#223;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 48px;
+  backdrop-filter: blur(8px);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand h1{font-size:20px;color:var(--accent-2);margin:0;font-weight:700}
+.brand h1 span{color:var(--accent)}
+.logo-blob{
+  width:44px;height:44px;border-radius:12px;
+  background: linear-gradient(135deg,#DDEBFF,#F2EBFF);
+  box-shadow: 0 8px 30px rgba(122,119,217,0.12), inset 0 -6px 12px rgba(255,255,255,0.6);
+}
+
+/* simple nav links */
+.nav-links a{
+  text-decoration:none;color:rgba(34,34,34,0.8);margin-left:22px;font-weight:500;
+  transition:all .25s;
+}
+.nav-links a:hover{color:var(--accent);transform:translateY(-3px)}
+
+/* HERO LAYOUT */
+.hero{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  justify-content:center;
+  padding:60px 48px;
+  min-height:calc(100vh - 156px);
+}
+
+/* left */
+.hero-left{max-width:620px}
+.hero-left h2{
+  font-size:36px;color:var(--accent-2);margin-bottom:10px;letter-spacing:-0.3px;
+  transform-origin:center left;
+  animation: entry .8s ease both;
+}
+.lead{color:var(--muted);margin-bottom:20px;font-size:16px}
+
+/* feature cards row */
+.features{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap}
+.feat{
+  width:220px;background:var(--glass);padding:14px;border-radius:14px;
+  box-shadow: 0 12px 30px rgba(72,64,120,0.06);
+  text-align:center;transition:transform .35s, box-shadow .35s;
+  transform-style:preserve-3d;
+}
+.feat img{width:74px;height:74px;object-fit:contain;margin-bottom:8px}
+.feat h4{margin:6px 0 4px;color:var(--accent-2)}
+.feat p{font-size:13px;color:var(--muted)}
+
+/* right - login */
+.login-card{
+  width:360px;padding:20px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.84));
+  box-shadow: 0 20px 50px rgba(60,52,110,0.12);
+  transform-style:preserve-3d;
+  position:relative;
+  overflow:visible;
+}
+.card-top{display:flex;justify-content:center;gap:14px;margin-bottom:6px}
+.pet-face{
+  width:70px;height:70px;border-radius:50%;
+  background:white;padding:8px;box-shadow: 0 10px 30px rgba(40,36,90,0.08);
+  transform-style:preserve-3d;transition:transform .45s;
+}
+.pet-face.cat{transform:translateY(-14px) rotate(-6deg)}
+.pet-face.dog{transform:translateY(-8px) rotate(6deg)}
+
+.login-card h3{margin:0;text-align:center;color:var(--accent-2)}
+.muted{font-size:13px;color:var(--muted);text-align:center;margin-bottom:12px}
+
+.login-form{display:flex;flex-direction:column;gap:10px;padding:6px 8px}
+.login-form input{
+  padding:12px 14px;border-radius:10px;border:1px solid rgba(70,70,120,0.06);
+  font-size:14px;background:transparent;outline:none;
+  box-shadow: inset 0 -6px 12px rgba(255,255,255,0.5);
+}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+.primary{
+  padding:10px 12px;border-radius:10px;border:none;background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  color:white;font-weight:600;cursor:pointer;margin-top:6px;box-shadow:0 10px 25px rgba(122,119,217,0.18);
+  transition:transform .18s ease;
+}
+.primary:active{transform:translateY(1px) scale(.998)}
+.ghost{
+  padding:9px;border-radius:10px;border:1px solid rgba(74,71,160,0.08);background:transparent;cursor:pointer;
+}
+
+/* OR divider */
+.or{margin:12px auto 6px;text-align:center;color:var(--muted);font-size:12px}
+.small-note{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+
+/* floating pets */
+.floating{
+  position:fixed;width:120px;height:120px;background-size:contain;background-repeat:no-repeat;pointer-events:none;z-index:1;
+  filter:drop-shadow(0 12px 30px rgba(40,36,90,0.09));
+  transform-style:preserve-3d;
+}
+.pet1{background-image:url('../Photos/mimi\ .jpg');left:8%;top:22%;animation:floaty 7.2s ease-in-out infinite}
+.pet2{background-image:url('../Photos/WhatsApp\ Image\ 2025-10-09\ at\ 22.25.20_36fc2caf.jpg');right:6%;bottom:18%;animation:floaty 6.6s ease-in-out infinite;animation-delay:1s}
+
+/* footer */
+.footer{text-align:center;padding:22px;color:var(--muted);font-size:13px}
+
+/* small interactions */
+.tilt-card{transition:transform .25s ease, box-shadow .25s ease}
+.tilt-card:hover{transform:translateY(-8px) rotateX(6deg) rotateY(-6deg);box-shadow:0 30px 60px rgba(60,52,120,0.12)}
+
+/* responsive */
+@media (max-width:900px){
+  .hero{flex-direction:column;padding:40px}
+  .hero-left,.login-card{max-width:680px}
+  .login-card{width:94%}
+  .nav{padding:16px}
+}
+
+/* animations */
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-22px) rotate(-4deg)}100%{transform:translateY(0)}}
+@keyframes entry{from{transform:translateY(14px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+
+.logo-img {
+  width: 40px;           /* small size */
+  height: 40px;          /* keep square */
+  border-radius: 50%;    /* make it circular */
+  object-fit: cover;     /* fill circle without stretching */
+  vertical-align: middle; /* align with text */
+  margin-right: 8px;     /* space between logo and text */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* optional small shadow */
+  transition: transform 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.1); /* slight zoom on hover */
+}
+/* ── Care Support Dropdown ── */
+.nav-dropdown { position:relative; display:inline-block; margin-left:22px; }
+.dropdown-toggle { text-decoration:none; color:rgba(34,34,34,0.8); font-weight:500; transition:all .25s; cursor:pointer; }
+.dropdown-toggle:hover { color:var(--accent); }
+.dropdown-menu {
+  display:none; position:absolute; top:calc(100% + 10px); left:50%;
+  transform:translateX(-50%); background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(14px); border:1px solid rgba(122,119,217,0.15);
+  border-radius:12px; box-shadow:0 16px 40px rgba(60,52,110,0.13);
+  min-width:160px; overflow:hidden; z-index:999;
+}
+.nav-dropdown:hover .dropdown-menu { display:block; }
+.dropdown-menu a {
+  display:block; padding:11px 18px; text-decoration:none;
+  color:rgba(34,34,34,0.8); font-size:14px; font-weight:500;
+  transition:background .2s, color .2s; margin-left:0;
+}
+.dropdown-menu a:hover { background:rgba(122,119,217,0.08); color:var(--accent); }
+/* ── Care Support Dropdown ── */
+.nav-dropdown { position: relative; display: inline-block; margin-left: 22px; }
+.dropdown-toggle { text-decoration: none; color: rgba(34,34,34,0.8); font-weight: 500; font-size: 14px; transition: color .25s; cursor: pointer; }
+.dropdown-toggle:hover { color: var(--accent); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 10px; min-width: 170px; z-index: 9999; }
+.dropdown-menu-inner { background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border: 1px solid rgba(122,119,217,0.18); border-radius: 14px; box-shadow: 0 16px 44px rgba(60,52,110,0.15); overflow: hidden; }
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 20px; text-decoration: none; color: rgba(31,36,48,0.82); font-size: 14px; font-weight: 500; transition: background .18s, color .18s; border-bottom: 1px solid rgba(122,119,217,0.07); margin-left: 0; }
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(122,119,217,0.09); color: var(--accent); }

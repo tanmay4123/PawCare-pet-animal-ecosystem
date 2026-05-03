@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PawCare — Home</title>
+
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="../Photos/Paw.jpeg" alt="PawCare" class="brand-logo">
+      <div class="brand-text">
+        <h1>🐾 <span>Paw</span>Care</h1>
+        <small>Because every paw deserves love</small>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="/home/home.html">Home</a>
+      <a href="/about/about.html">About</a>
+      <a class="active" href="/donation/donation.html">Donate</a>
+      <div class="nav-dropdown" id="careDropdown">
+        <a href="#" class="dropdown-toggle">Care Support ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-menu-inner">
+            <a href="../map/map.html">🗺️ Vet</a>
+            <a href="../sitter/sitter.html">🏠 Pet Care</a>
+          </div>
+        </div>
+      </div>
+      <a href="/blog/blog.html">Blog</a>
+      <a href="/dashboard/dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <!-- Soft background shapes -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <!-- Slideshow area with soft overlay -->
+  <section class="hero-slideshow">
+    <div class="slideshow-soft-overlay"></div>
+
+    <div class="slideshow-wrapper">
+      <div class="slider" id="slider">
+        <!-- use your Photos folder images (7 images) -->
+        <div class="slide"><img src="../Photos/home page/dog1.jpeg" alt="pet1"></div>
+        <div class="slide"><img src="../Photos/home page/cat1.jpeg" alt="pet2"></div>
+        <div class="slide"><img src="../Photos/home page/dog2.jpeg" alt="pet3"></div>
+        <div class="slide"><img src="../Photos/home page/cat2.jpeg" alt="pet4"></div>
+        <div class="slide"><img src="../Photos/home page/dog3.jpeg" alt="pet5"></div>
+        <div class="slide"><img src="../Photos/home page/cat3.jpeg" alt="pet6"></div>
+        <div class="slide"><img src="../Photos/home page/cat4.jpeg" alt="pet7"></div>
+      </div>
+
+      <!-- slider controls -->
+      <div class="slider-controls">
+        <button id="prev" aria-label="Previous slide">‹</button>
+        <div id="dots" class="dots"></div>
+        <button id="next" aria-label="Next slide">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PawCare curved logo center (UPDATED) -->
+  <section class="logo-center" data-aos="fade-up" data-aos-delay="200">
+    <!-- small icon kept, but curved text is separate and has no background -->
+    <img src="../Photos/Paw.jpeg" alt="paw" class="logo-icon" />
+
+    <!-- SVG curved text -->
+    <svg class="curved-svg" viewBox="0 0 800 180" preserveAspectRatio="xMidYMid meet" aria-hidden="false" role="img">
+      <defs>
+        <linearGradient id="gradText" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#7b68ee"/>
+          <stop offset="100%" stop-color="#6ba3ff"/>
+        </linearGradient>
+        <!-- subtle drop for the text path -->
+        <path id="titleCurve" d="M60,120 Q400,10 740,120" />
+      </defs>
+
+      <text text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700">
+        <textPath href="#titleCurve" startOffset="50%" class="logo-title">
+          🐾 PawCare 🐾
+        </textPath>
+      </text>
+    </svg>
+
+    <p class="logo-sub">Helping pets with love, medicine & adoption — one paw at a time.</p>
+  </section>
+
+  <!-- 3 glass cards -->
+  <section class="quick-links" data-aos="fade-up" data-aos-delay="300">
+    <article class="glass-card" onclick="location.href='../about/about.html'">
+      <div class="card-bg"></div>
+      <h3>About</h3>
+      <p>Who we are & how we help animals in need.</p>
+      <span class="card-cta">Explore →</span>
+    </article>
+
+    <article class="glass-card" onclick="location.href='../donation/donation.html'">
+      <div class="card-bg"></div>
+      <h3>Donation</h3>
+      <p>Donate securely. See live ledger & receipts.</p>
+      <span class="card-cta">Donate →</span>
+    </article>
+
+    <article class="glass-card" onclick="location.href='../map/map.html'">
+      <div class="card-bg"></div>
+      <h3>Support</h3>
+      <p>Find vets, NGOs, shelters and volunteer opportunities.</p>
+      <span class="card-cta">Help →</span>
+    </article>
+  </section>
+
+  <!-- How we started (timeline) -->
+  <section class="how-started" data-aos="fade-up" data-aos-delay="200">
+    <h2>How PawCare started</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="dot"></div>
+        <div class="content">
+          <h4>2019 — A small rescue</h4>
+          <p>Founded by a group of pet-lovers who rescued 3 injured strays and vowed to do more.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+        <div class="dot"></div>
+        <div class="content">
+          <h4>2020 — Community network</h4>
+          <p>Local volunteers joined, small vet partners came on board and donations started pouring in.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="dot"></div>
+        <div class="content">
+          <h4>2022 — Digital launch</h4>
+          <p>We launched PawCare online to accept secure donations, show live ledgers, and help adopters connect.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+        <div class="dot"></div>
+        <div class="content">
+          <h4>Today</h4>
+          <p>Expanding shelters, empowering volunteers & delivering healthcare to thousands of pets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aim / mission -->
+  <section class="mission" data-aos="fade-up" data-aos-delay="150">
+    <h2>Our Aim</h2>
+    <p>To create a sustainable, transparent network for rescue, treatment and adoption. We believe in openness — donors can view receipts and admins update spends in real time.</p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2025 PawCare • Built with ❤️ • <a href="../admin/admin.html">Admin</a></p>
+    </div>
+  </footer>
+
+  <!-- AOS + scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="home.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+    const d = document.getElementById('careDropdown');
+    d.addEventListener('click', function(e){ e.stopPropagation(); this.classList.toggle('open'); });
+    document.addEventListener('click', function(){ d.classList.remove('open'); });
+  </script>
+</body>
+</html>

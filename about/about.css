@@ -1,0 +1,67 @@
+:root{
+  --bg1:#E9F4FF; --bg2:#F0EBFF; --accent:#7A77D9; --accent-2:#4A47A3; --glass:rgba(255,255,255,0.86); --muted:#52576a;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Poppins",sans-serif;background:linear-gradient(180deg,var(--bg2),var(--bg1));color:#1f2430;-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo-blob{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#DDEBFF,#F2EBFF);box-shadow:0 8px 30px rgba(122,119,217,0.12)}
+.brand h1{margin:0;color:var(--accent-2)}
+.nav-links a{margin-left:18px;text-decoration:none;color:rgba(22,22,30,0.7);font-weight:500}
+.nav-links a.active{color:var(--accent)}
+
+.about-hero{display:flex;gap:30px;padding:44px 60px;align-items:flex-start}
+.card{background:var(--glass);padding:26px;border-radius:16px;box-shadow:0 16px 40px rgba(60,52,110,0.07);max-width:680px}
+.about-left h2{color:var(--accent-2);margin-top:0}
+.about-left p{color:var(--muted);line-height:1.65}
+.pill-list{list-style:none;padding:0;margin:16px 0 20px;display:flex;gap:12px;flex-wrap:wrap}
+.pill-list li{background:linear-gradient(90deg,#fff,#f8f8ff);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted);box-shadow:0 8px 24px rgba(80,74,150,0.04)}
+
+.cta-row{display:flex;gap:12px;margin-top:10px}
+.btn{padding:10px 16px;border-radius:12px;text-decoration:none;display:inline-block}
+.primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;font-weight:600;box-shadow:0 10px 30px rgba(122,119,217,0.14)}
+.ghost{background:transparent;border:1px solid rgba(74,71,160,0.06);color:var(--accent-2)}
+
+.about-right{min-width:320px;display:flex;flex-direction:column;gap:18px;align-items:center}
+.floating-canvas{width:260px;height:260px;border-radius:18px;background:linear-gradient(180deg,#fff,#faf8ff);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 18px 40px rgba(60,52,110,0.06)}
+.floating-canvas img{width:130px;position:absolute;transition:transform .6s}
+.floating-cat{left:18%;top:12%;transform:rotate(-6deg)}
+.floating-dog{right:16%;bottom:10%;transform:rotate(8deg)}
+
+.mission-cards{display:grid;grid-template-columns:1fr;gap:12px;width:100%}
+.mission{background:linear-gradient(180deg,#fbfcff,#f6f4ff);padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(72,64,120,0.05)}
+.mission h4{margin:0;color:var(--accent-2)}
+.mission p{color:var(--muted);margin:6px 0 0;font-size:13px}
+
+/* team section */
+.team-section{padding:40px 60px;text-align:center}
+.team-grid{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:18px}
+.team-card{width:180px;background:var(--glass);padding:18px;border-radius:16px;box-shadow:0 12px 30px rgba(60,52,110,0.06);transition:transform .3s}
+.team-card img{width:80px;height:80px;object-fit:contain;margin-bottom:8px}
+.team-card h4{margin:6px 0 2px;color:var(--accent-2)}
+.team-card p{color:var(--muted);font-size:13px}
+
+/* hover tilt */
+.tilt-card{transition:transform .28s ease, box-shadow .28s ease}
+.tilt-card:hover{transform:translateY(-8px) rotateX(6deg) rotateY(-6deg);box-shadow:0 28px 70px rgba(60,52,110,0.12)}
+
+/* responsive */
+@media(max-width:900px){
+  .about-hero{flex-direction:column;align-items:center;padding:20px}
+  .about-right{width:100%}
+}
+
+/* tiny footer */
+.footer{text-align:center;padding:24px;color:var(--muted)}
+.footer a{color:var(--accent);text-decoration:none;font-weight:500}
+
+/* ── Care Support Dropdown ── */
+.nav-dropdown { position: relative; display: inline-block; margin-left: 22px; }
+.dropdown-toggle { text-decoration: none; color: rgba(34,34,34,0.8); font-weight: 500; font-size: 14px; transition: color .25s; cursor: pointer; }
+.dropdown-toggle:hover { color: var(--accent); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 10px; min-width: 170px; z-index: 9999; }
+.dropdown-menu-inner { background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border: 1px solid rgba(122,119,217,0.18); border-radius: 14px; box-shadow: 0 16px 44px rgba(60,52,110,0.15); overflow: hidden; }
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 20px; text-decoration: none; color: rgba(31,36,48,0.82); font-size: 14px; font-weight: 500; transition: background .18s, color .18s; border-bottom: 1px solid rgba(122,119,217,0.07); margin-left: 0; }
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(122,119,217,0.09); color: var(--accent); }

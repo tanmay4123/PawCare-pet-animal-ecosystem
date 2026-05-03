@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PawCare — Donate</title>
+
+  <!-- Fonts & Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../donation/donation.css" />
+
+  <style>
+    .coin {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: radial-gradient(circle at 30% 30%, #ffd700, #e6ac00);
+      border-radius: 50%;
+      animation: drop 3s linear forwards;
+      opacity: 0.9;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    @keyframes drop {
+      0% { transform: translateY(-20px); opacity: 1; }
+      80% { transform: translateY(200px); opacity: 1; }
+      100% { transform: translateY(250px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🐾 Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="../Photos/Paw.jpeg" alt="PawCare" class="brand-logo">
+      <div class="brand-text">
+        <h1>🐾 <span>Paw</span>Care</h1>
+        <small>Because every paw deserves love</small>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="/home/home.html">Home</a>
+      <a href="/about/about.html">About</a>
+      <a class="active" href="/donation/donation.html">Donate</a>
+      <div class="nav-dropdown" id="careDropdown">
+        <a href="#" class="dropdown-toggle">Care Support ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-menu-inner">
+            <a href="../map/map.html">🗺️ Vet</a>
+            <a href="../sitter/sitter.html">🏠 Pet Care</a>
+          </div>
+        </div>
+      </div>
+      <a href="/blog/blog.html">Blog</a>
+      <a href="/dashboard/dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <!-- 💝 Main Donation Section -->
+  <main class="main-wrap">
+    <section class="top-hero" data-aos="fade-right">
+      <h1 class="title">🐾 Help PawCare — Small Steps, Big Impact</h1>
+      <p class="subtitle">
+        Support rescued animals with food, shelter & medicine. Fast UPI, cards & autopay options.
+      </p>
+
+      <div class="donation-panel glass">
+        <!-- Progress Bar -->
+        <div class="progress-info">
+          <div class="goal">
+            Raised <strong id="raised-display">₹0</strong> of <span id="goal-display">₹50,000</span>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="coin-layer"></div>
+
+        <!-- Donation Form -->
+        <form id="donation-form" class="donation-form" autocomplete="off">
+          <div class="fields">
+            <input id="donor-name" type="text" placeholder="Your name" required />
+            <input id="donor-email" type="email" placeholder="Email (for receipt)" required />
+            <input id="donor-phone" type="tel" placeholder="Phone number" maxlength="10" required />
+          </div>
+
+
+          <div class="row">
+            <div class="amount">
+              <label>Amount (₹)</label>
+              <input id="donation-amount" type="number" min="10" value="100" required />
+            </div>
+            <div class="donation-type">
+              <label>Donation Type</label><br />
+              <button id="toggle-button" type="button" class="toggle-btn one-time">
+                <span class="label-one">One-Time</span>
+                <span class="label-two">AutoPay</span>
+                <span class="knob"></span>
+              </button>
+              <div class="note">AutoPay min: <strong>₹10</strong>/month</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="donate-btn" type="button" class="btn-primary">
+              Donate Now 🐾
+            </button>
+          </div>
+
+          <p class="hint">
+            We support Google Pay, PhonePe, Paytm & all major cards. Secure checkout via Cashfree.
+          </p>
+        </form>
+
+        <!-- Donor Leaderboard -->
+        <div class="leaderboard">
+          <h3>Top Donors</h3>
+          <table>
+            <thead>
+              <tr><th>#</th><th>Donor</th><th>Amount</th><th>Date</th><th>Receipt</th></tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Donor Leaderboard -->
+<div class="leaderboard">
+  <h3>Top Donors</h3>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Donor</th><th>Amount</th><th>Date</th><th>Receipt</th></tr>
+    </thead>
+    <tbody id="leaderboard-body"></tbody>
+  </table>
+
+  <!-- 🧾 Instant Receipt Popup (Hidden by default) -->
+  <div id="receipt-popup" class="receipt-popup" style="display:none;">
+    <div class="receipt-content glass">
+      <h2>🎉 Thank You for Your Support!</h2>
+      <p><strong>Donor:</strong> <span id="receipt-donor"></span></p>
+      <p><strong>Amount:</strong> ₹<span id="receipt-amount"></span></p>
+      <p><strong>Date:</strong> <span id="receipt-date"></span></p>
+      <button id="download-receipt" class="btn-primary">Download Receipt</button>
+      <button id="close-receipt" class="btn-outline">Close</button>
+    </div>
+  </div>
+</div>
+
+    </section>
+  </main>
+
+  <!-- 🦴 Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2025 PawCare • Built with ❤️ • <a href="../admin/admin.html">Admin</a></p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Cashfree SDK must load before your JS -->
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+  <!-- Then your donation.js -->
+  <script src="../donation/donation.js" defer></script>
+  <script src="../donation/receipt-ledger.js"></script>
+
+  <script>
+  // 🧾 Load Top Donors on page load
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/payments/top");
+      const data = await res.json();
+
+      if (data.success && Array.isArray(data.donations)) {
+        const leaderboardBody = document.getElementById("leaderboard-body");
+        leaderboardBody.innerHTML = "";
+
+        data.donations.forEach((donation, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${donation.donorName}</td>
+            <td>₹${donation.amount}</td>
+            <td>${new Date(donation.createdAt).toLocaleDateString("en-IN")}</td>
+            <td><button class="btn-outline small" onclick="downloadReceipt('${donation.donorName}', ${donation.amount})">Receipt</button></td>
+          `;
+          leaderboardBody.appendChild(row);
+        });
+      }
+    } catch (err) {
+      console.error("❌ Failed to load leaderboard:", err);
+    }
+  });
+
+  // 📄 Allow instant receipt download
+  function downloadReceipt(name, amount) {
+    const doc = new jspdf.jsPDF();
+    doc.setFontSize(18);
+    doc.text("PawCare Donation Receipt", 20, 20);
+    doc.setFontSize(12);
+    doc.text(`Donor: ${name}`, 20, 40);
+    doc.text(`Amount: ₹${amount}`, 20, 50);
+    doc.text(`Date: ${new Date().toLocaleDateString("en-IN")}`, 20, 60);
+    doc.text("Thank you for helping PawCare!", 20, 80);
+    doc.save(`PawCare_Receipt_${name}.pdf`);
+  }
+</script>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const d = document.getElementById('careDropdown');
+  d.addEventListener('click', function(e){ e.stopPropagation(); this.classList.toggle('open'); });
+  document.addEventListener('click', function(){ d.classList.remove('open'); });
+  </script>
+
+</body>
+</html>

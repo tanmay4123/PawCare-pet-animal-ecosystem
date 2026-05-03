@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawCare — Home</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo-blob"></div>
+        <h1>
+          <img class="logo-img" src="../Photos/Paw.jpeg" alt="PawCare Logo">
+          🐾 Paw<span>Care</span>
+        </h1>
+      </div>
+      <nav class="main-nav">
+      <a href="/home/home.html">Home</a>
+      <a href="/about/about.html">About</a>
+      <a class="active" href="/donation/donation.html">Donate</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown" id="careDropdown">
+        <a href="#" class="dropdown-toggle">Care Support ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-menu-inner">
+            <a href="../map/map.html">🗺️ Vet</a>
+            <a href="../sitter/sitter.html">🏠 Pet Care</a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <a href="../map/map.html">🗺️ Vet</a>
+        <a href="../sitter/sitter.html">🏠 Pet Care</a>
+  </div>
+</div>
+      <a href="/blog/blog.html">Blog</a>
+      <a href="/dashboard/dashboard.html">Dashboard</a>
+    </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero-left">
+        <h2>Because every paw deserves love</h2>
+        <p class="lead">Donate from ₹10 • Live ledger • Find vets & NGOs • Adopt & help — all in one place.</p>
+
+        <div class="features">
+          <div class="feat tilt-card" data-tilt>
+            <img src="../Photos/WhatsApp Image 2025-10-09 at 22.25.20_36fc2caf.jpg" alt="Transparent Ledger">
+            <h4>Transparent Ledger</h4>
+            <p>Track every receipt in real-time.</p>
+          </div>
+
+          <div class="feat tilt-card" data-tilt>
+            <img src="../Photos/mimi.jpg" alt="Local Help">
+            <h4>Local Help</h4>
+            <p>Find vets, shelters & volunteers nearby.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="login-card tilt-card" data-tilt>
+        <div class="card-top">
+          <img class="pet-face cat" src="../Photos/mimi.jpg" alt="cat">
+          <img class="pet-face dog" src="../Photos/dog.jpg" alt="dog">
+        </div>
+
+        <h3>Welcome back</h3>
+        <p class="muted">Login to access your dashboard & donation receipts</p>
+
+        <form id="loginForm" class="login-form" novalidate>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          
+          <div class="row">
+            <label class="remember">
+              <input type="checkbox" id="rememberMe"> Remember me
+            </label>
+            <a class="link" href="#">Forgot?</a>
+          </div>
+
+          <button type="submit" class="primary">Login</button>
+          <button type="button" id="demoBtn" class="ghost">Login as Guest</button>
+
+          <div id="loginMessage" class="login-message"></div>
+        </form>
+
+        <div class="or">OR</div>
+        <div class="small-note">
+          Sign up to become a PawCare hero ✨ <a href="../register/register.html">Register</a>
+        </div>
+      </aside>
+    </main>
+
+    <div class="floating pet1"></div>
+    <div class="floating pet2"></div>
+
+    <footer class="footer">
+      <p>© 2025 PawCare • Built by Tanmay</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+  const d = document.getElementById('careDropdown');
+  d.addEventListener('click', function(e){ e.stopPropagation(); this.classList.toggle('open'); });
+  document.addEventListener('click', function(){ d.classList.remove('open'); });
+  </script>
+  
+</body>
+</html>

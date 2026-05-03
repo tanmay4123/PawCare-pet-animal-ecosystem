@@ -1,0 +1,245 @@
+/* home.css - PawCare animated home page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root{
+  --bg1: #e6f0ff;
+  --bg2: #ede6ff;
+  --accent: #7b68ee;
+  --accent-2: #6ba3ff;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --muted: #c7cee8;
+  --text: #0f1724;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Header */
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 36px;
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 6px 18px rgba(11,20,50,0.08);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 6px 18px rgba(107,163,255,0.15)}
+.brand-text h1{font-size:20px;color:var(--accent);margin:0}
+.brand-text h1 span{color:var(--accent-2)}
+.brand-text small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.main-nav a{margin-left:20px;text-decoration:none;color:rgba(15,23,36,0.8);font-weight:500;transition:all .25s}
+.main-nav a:hover{color:var(--accent)}
+
+/* Background blobs */
+.bg-blobs{position:fixed;inset:0;pointer-events:none;z-index:0}
+.blob{position:absolute;border-radius:50%;filter:blur(45px);opacity:0.85;}
+.b1{width:420px;height:420px;background:linear-gradient(180deg,#bfe1ff55,#a7c4ff99);left:-80px;top:10%}
+.b2{width:300px;height:300px;background:linear-gradient(180deg,#eec8ff55,#cdb6ff99);right:-60px;top:30%}
+.b3{width:260px;height:260px;background:linear-gradient(180deg,#ffd3e499,#ffc6e4aa);left:10%;bottom:10%}
+
+/* Slideshow */
+.hero-slideshow{position:relative;z-index:5;padding-top:6px}
+.slideshow-soft-overlay{position:absolute;inset:0;background:linear-gradient(0deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));z-index:6}
+.slideshow-wrapper{position:relative;max-width:1200px;margin:0 auto;height:72vh;overflow:hidden;border-radius:20px;padding:12px}
+.slider{
+  display:flex;height:100%;transition: transform 500ms cubic-bezier(.22,.9,.27,1);
+}
+.slide{min-width:100%;height:100%;position:relative;}
+.slide img{
+  width:100%;height:100%;object-fit:cover;border-radius:16px;
+  transition:transform 6s ease, filter 0.5s;
+}
+.slide img:hover{transform:scale(1.03);filter:brightness(0.9)}
+
+/* Slider controls */
+.slider-controls{position:absolute;left:0;right:0;bottom:18px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:12}
+#prev,#next{
+  background:rgba(255,255,255,0.75);border:none;padding:8px 12px;border-radius:10px;
+  cursor:pointer;font-size:20px;color:var(--text);
+  box-shadow:0 6px 18px rgba(16,24,40,0.08);
+  transition:transform .18s
+}
+#prev:hover,#next:hover{transform:translateY(-4px)}
+.dots{display:flex;gap:8px}
+.dots button{
+  width:10px;height:10px;border-radius:50%;border:none;
+  background:rgba(255,255,255,0.6);cursor:pointer;transition:all .2s
+}
+.dots button.active{
+  width:28px;border-radius:12px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  box-shadow:0 8px 20px rgba(123,104,238,0.18)
+}
+
+/* Center PawCare curved title */
+.logo-center{
+  max-width:900px;margin:32px auto 12px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.logo-icon{
+  width:72px;height:72px;border-radius:50%;
+  box-shadow:0 12px 30px rgba(107,163,255,0.2);
+  animation: floatIcon 3.5s ease-in-out infinite;
+}
+@keyframes floatIcon {
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0);}
+}
+
+.curved-svg{
+  width:100%;max-width:780px;height:160px;overflow:visible;
+}
+.logo-title{
+  font-size:54px;
+  fill:url(#gradText);
+  stroke:rgba(255,255,255,0.15);
+  stroke-width:0.6px;
+  letter-spacing:1.2px;
+  animation: floatText 4.5s ease-in-out infinite;
+  transition:transform 0.6s ease;
+}
+@keyframes floatText {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
+}
+.logo-sub{color:rgba(7,13,34,0.6);margin-top:4px;font-size:1rem}
+
+/* Glass cards */
+.quick-links{
+  max-width:1200px;margin:36px auto;padding:18px 22px;
+  display:flex;gap:24px;justify-content:center;flex-wrap:wrap;
+}
+.glass-card{
+  width:320px;min-height:190px;position:relative;overflow:hidden;
+  border-radius:20px;
+  background: var(--glass-bg);
+  border:1.5px solid var(--glass-border);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  padding:24px;
+  cursor:pointer;
+  transition: transform .4s cubic-bezier(.2,.9,.3,1), border-color .4s, box-shadow .4s;
+}
+.glass-card h3{color:var(--accent);margin-top:6px;font-size:1.3rem}
+.glass-card p{color:rgba(15,23,36,0.75);margin-top:12px}
+.glass-card .card-cta{display:inline-block;margin-top:16px;color:var(--accent-2);font-weight:600}
+
+/* Hover effect */
+.glass-card:hover{
+  transform:translateY(-12px) scale(1.06);
+  border-color: var(--accent-2);
+  box-shadow: 0 25px 60px rgba(107,163,255,0.25);
+}
+.glass-card:hover::before{
+  opacity:0.7;
+}
+
+/* Timeline and mission unchanged */
+.how-started{max-width:1000px;margin:48px auto;padding:0 20px 40px}
+.how-started h2{text-align:center;color:var(--accent);margin-bottom:20px}
+.timeline{display:flex;flex-direction:column;gap:24px}
+.timeline-item{display:flex;gap:18px;align-items:flex-start;position:relative}
+.timeline-item .dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:6px;box-shadow:0 6px 18px rgba(123,104,238,0.18)}
+.timeline-item .content{background:white;border-radius:12px;padding:14px;box-shadow:0 12px 30px rgba(12,24,48,0.06);flex:1}
+.timeline-item h4{margin:0;color:var(--accent)}
+.timeline-item p{margin-top:8px;color:rgba(7,13,34,0.7);font-size:0.95rem}
+
+/* Mission */
+.mission{max-width:900px;margin:40px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.95));box-shadow:0 12px 40px rgba(8,20,50,0.06)}
+.mission h2{color:var(--accent);margin-bottom:8px}
+.mission p{color:rgba(7,13,34,0.8);line-height:1.6}
+
+/* Footer */
+.site-footer{margin-top:40px;padding:18px 0;text-align:center;color:rgba(7,13,34,0.7)}
+.site-footer a{color:var(--accent);text-decoration:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .brand-text h1{font-size:18px}
+  .glass-card{width:92%}
+  .logo-title{font-size:32px}
+  .slideshow-wrapper{height:52vh}
+  .curved-svg{height:110px}
+  .logo-icon{width:56px;height:56px}
+}
+/* ── Care Support Dropdown ── */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.dropdown-toggle {
+  text-decoration: none;
+  color: rgba(15,23,36,0.8);
+  font-weight: 500;
+  transition: all .25s;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  color: var(--accent);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(122,119,217,0.15);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(60,52,110,0.13);
+  min-width: 160px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 11px 18px;
+  text-decoration: none;
+  color: rgba(15,23,36,0.8);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background .2s, color .2s;
+  margin-left: 0;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(122,119,217,0.08);
+  color: var(--accent);
+}
+/* ── Care Support Dropdown ── */
+.nav-dropdown { position: relative; display: inline-block; margin-left: 22px; }
+.dropdown-toggle { text-decoration: none; color: rgba(34,34,34,0.8); font-weight: 500; font-size: 14px; transition: color .25s; cursor: pointer; }
+.dropdown-toggle:hover { color: var(--accent); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 10px; min-width: 170px; z-index: 9999; }
+.dropdown-menu-inner { background: rgba(255,255,255,0.98); backdrop-filter: blur(16px); border: 1px solid rgba(122,119,217,0.18); border-radius: 14px; box-shadow: 0 16px 44px rgba(60,52,110,0.15); overflow: hidden; }
+.nav-dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 12px 20px; text-decoration: none; color: rgba(31,36,48,0.82); font-size: 14px; font-weight: 500; transition: background .18s, color .18s; border-bottom: 1px solid rgba(122,119,217,0.07); margin-left: 0; }
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: rgba(122,119,217,0.09); color: var(--accent); }

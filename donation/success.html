@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PawCare - Payment Successful 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f8f9ff;
+      text-align: center;
+      margin-top: 5%;
+    }
+    .card {
+      display: inline-block;
+      background: white;
+      padding: 30px 50px;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    }
+    h1 { color: #00b894; }
+    .redirect { margin-top: 20px; color: #555; }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 70%;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background: #00b894;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✅ Payment Successful!</h1>
+    <p>Thank you for donating to PawCare ❤️</p>
+    <p>Your receipt will download automatically.</p>
+
+    <h3 style="margin-top: 20px;">Top Donations 🏆</h3>
+    <table id="leaderboard">
+      <thead>
+        <tr><th>#</th><th>Name</th><th>Amount</th><th>Date</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p class="redirect">Redirecting you to Home in <span id="timer">5</span> seconds...</p>
+  </div>
+
+  <script>
+    const donation = JSON.parse(localStorage.getItem("lastDonation") || "{}");
+
+    // ✅ Generate Receipt Automatically
+    if (donation?.name) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.setFontSize(18);
+      doc.text("PawCare Donation Receipt", 20, 20);
+      doc.setFontSize(12);
+      doc.text(`Donor: ${donation.name}`, 20, 40);
+      doc.text(`Email: ${donation.email}`, 20, 50);
+      doc.text(`Phone: ${donation.phone}`, 20, 60);
+      doc.text(`Amount: ₹${donation.amount}`, 20, 70);
+      doc.text(`Date: ${donation.date}`, 20, 80);
+      doc.text("Thank you for your love & support 🐾", 20, 100);
+      doc.save(`PawCare_Receipt_${donation.name}_${donation.date}.pdf`);
+    }
+
+    // ✅ Update Local Leaderboard
+    const board = JSON.parse(localStorage.getItem("leaderboard") || "[]");
+    if (donation?.name) {
+      board.unshift({
+        name: donation.name,
+        amount: donation.amount,
+        date: donation.date,
+      });
+      localStorage.setItem("leaderboard", JSON.stringify(board.slice(0, 5))); // top 5
+    }
+
+    const tbody = document.querySelector("#leaderboard tbody");
+    (JSON.parse(localStorage.getItem("leaderboard")) || []).forEach((d, i) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${i + 1}</td><td>${d.name}</td><td>₹${d.amount}</td><td>${d.date}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    // ⏳ Redirect Countdown
+    let countdown = 5;
+    const timer = document.getElementById("timer");
+    const interval = setInterval(() => {
+      countdown--;
+      timer.textContent = countdown;
+      if (countdown === 0) {
+        clearInterval(interval);
+        window.location.href = "../donation/donation.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

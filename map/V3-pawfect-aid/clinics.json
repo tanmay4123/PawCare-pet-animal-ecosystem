@@ -1,0 +1,502 @@
+[
+  {
+    "name": "Companion Vet Care Clinic",
+    "area": "Hingne Khurd",
+    "address": "Shop No 1, S.No 34, Building Akshay Paradise, Hingne Khurd",
+    "phone": "7487076484",
+    "rating": 5.0,
+    "map_link": "https://maps.app.goo.gl/hN7vEdNzMQRiDuzg8",
+    "speciality": "Multi-speciality: vaccinations, consultations, surgeries, diagnostics",
+    "keywords": ["multi", "vaccination", "consultation", "surgery", "diagnostics"]
+  },
+  {
+    "name": "Animal Care",
+    "area": "Aundh",
+    "address": "Jacinta Villa, Next to Bandhangad Society, Opp. Sandalwood Society, Aundh",
+    "phone": "9035290878",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/JmuzcVrjPBLHWGB1A",
+    "speciality": "General veterinary & preventive medicine",
+    "keywords": ["general", "preventive", "vaccination", "wellness"]
+  },
+  {
+    "name": "Dr. Gorhes Pet Cover Advanced Veterinary Clinic",
+    "area": "Kothrud",
+    "address": "Near Karve Statue Next to Sutar Bus Stand, Karve Road, Kothrud",
+    "phone": "9035058221",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/6gqApp6XXXxTCzLv8",
+    "speciality": "Advanced care: surgeries, emergency, grooming, orthopaedic",
+    "keywords": ["surgery", "emergency", "grooming", "orthopaedic"]
+  },
+  {
+    "name": "Pet World Clinic (Magarpatta)",
+    "area": "Magarpatta City",
+    "address": "Office-4A, Prince Garden, Near Residency Club, Magarpatta City",
+    "phone": "9035085324",
+    "rating": 4.3,
+    "map_link": "https://maps.app.goo.gl/8AiGDrhZHYyd8DDi7",
+    "speciality": "Multi-speciality hospital: routine & emergency care",
+    "keywords": ["multi", "routine", "emergency", "general"]
+  },
+  {
+    "name": "Pet Max Clinic",
+    "area": "Kothrud",
+    "address": "42/2, Abhijeet Apartment, Near Kirti Hardware Paud Phata, Karve Road, Kothrud",
+    "phone": "Not Available",
+    "rating": 4.7,
+    "map_link": "https://maps.app.goo.gl/kMMmWB3NqWdNRpMr8",
+    "speciality": "Multi-speciality: consultations, surgery, diagnostics",
+    "keywords": ["multi", "consultation", "surgery", "diagnostics"]
+  },
+  {
+    "name": "Woof & Meow",
+    "area": "Dhankawadi",
+    "address": "Shop No. 19/1C, Royal Arcade, Near Shankar Maharaj Math, Dhankawadi",
+    "phone": "9980128394",
+    "rating": 4.8,
+    "map_link": "https://maps.app.goo.gl/buAeKo8CiznZ9xXS8",
+    "speciality": "Pet clinic + grooming: basic surgery & vaccination",
+    "keywords": ["grooming", "surgery", "vaccination", "general"]
+  },
+  {
+    "name": "Vet Pet Clinic",
+    "area": "Katraj",
+    "address": "P 403, Wonder City, Near Katraj Dairy, Katraj Bypass Rd, Katraj",
+    "phone": "9035196502",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/gqtKH4vHfoK8WbAn7",
+    "speciality": "General veterinary: wellness checks & vaccination",
+    "keywords": ["general", "wellness", "vaccination"]
+  },
+  {
+    "name": "Starpugs Pet Care & Veterinary Services",
+    "area": "Katraj",
+    "address": "Sawant Park, Near Vodafone Idea Care, Chatanya Nagar, Dhankwadi, Pune-Satara Road, Katraj",
+    "phone": "8197589213",
+    "rating": 4.6,
+    "map_link": "https://maps.app.goo.gl/yyLXPPgQ8Fd9BBLR7",
+    "speciality": "Multi-service clinic: small breed & general surgeries",
+    "keywords": ["multi", "surgery", "small breed", "general"]
+  },
+  {
+    "name": "Pet Doc Vet Clinic",
+    "area": "Baner",
+    "address": "House No 4, Near Cellars Wine Shop, Pancard Club Road, Baner",
+    "phone": "9035177302",
+    "rating": 4.7,
+    "map_link": "https://maps.app.goo.gl/hhjPgfwQfbbE5Zp88",
+    "speciality": "Multi-speciality: orthopaedic, soft-tissue, diagnostics",
+    "keywords": ["orthopaedic", "soft-tissue", "diagnostics"]
+  },
+  {
+    "name": "Pets Lifeline",
+    "area": "Baner",
+    "address": "Shop No 22, Kalamkar Corner, Next to Jupiter Hospital, Near Jogeshwari Misal, Baner",
+    "phone": "8105251789",
+    "rating": 3.9,
+    "map_link": "https://maps.app.goo.gl/m5SsaWFJxni3mXa47",
+    "speciality": "Clinic / rescue: vaccinations, adoption support",
+    "keywords": ["vaccination", "adoption", "rescue", "general"]
+  },
+  {
+    "name": "Pet Med Veterinary Clinic",
+    "area": "Undri",
+    "address": "Shop 10, Runwal Diamond Complex, Near Maiss Hotel, Opp Palace Orchid Society, Undri NIBM Road, Undri",
+    "phone": "9035146657",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/vymeytGNPfvBq7zU9",
+    "speciality": "General & specialty: pathology, surgery, routine care",
+    "keywords": ["pathology", "surgery", "diagnostics", "general"]
+  },
+  {
+    "name": "Dr. Dahekar Pet Clinic & Pet Shop",
+    "area": "Sasane Nagar",
+    "address": "Shop No 26A, Vardhman Township, Near Railway Crossing, Sasane Nagar Road, Sasane Nagar - Hadapsar",
+    "phone": "8511401722",
+    "rating": 3.6,
+    "map_link": "https://maps.app.goo.gl/99c2dwvJQzjEcDCC7",
+    "speciality": "Clinic + shop: orthopaedic & soft-tissue surgery",
+    "keywords": ["orthopaedic", "surgery", "soft-tissue"]
+  },
+  {
+    "name": "Pet Ozone Pet Clinic",
+    "area": "Pimple Saudagar",
+    "address": "Shop No 5, Rose Icon Commercial Complex, Near Pizza Hut, Kunal Icon Main Road, Pimple Saudagar",
+    "phone": "9035193886",
+    "rating": 4.7,
+    "map_link": "https://maps.app.goo.gl/UDNbFp6irw8NLHPv6",
+    "speciality": "Multi-location: surgery, X-ray, pathology, grooming",
+    "keywords": ["surgery", "x-ray", "pathology", "grooming"]
+  },
+  {
+    "name": "Sniffi - Home Veterinary Care",
+    "area": "Viman Nagar",
+    "address": "Office No. 320, Biz Park, Near By Semboys College, Airport Road, Viman Nagar",
+    "phone": "8487881202",
+    "rating": 4.9,
+    "map_link": "https://maps.app.goo.gl/AxNbLsoZW5nRNh4R6",
+    "speciality": "Home veterinary: doorstep consultation & vaccination",
+    "keywords": ["home", "doorstep", "vaccination", "consultation"]
+  },
+  {
+    "name": "Delight Pet Shop & Pet Clinic",
+    "area": "Chinchwad",
+    "address": "Shop No. 27, Aishwarya Apartment, Gawde Nagar, Chinchwad",
+    "phone": "9035249159",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/522mysauVcx65LZG8",
+    "speciality": "Pet shop + clinic: grooming & consultation",
+    "keywords": ["grooming", "consultation", "retail"]
+  },
+  {
+    "name": "Vetpet Clinic",
+    "area": "Fursungi",
+    "address": "Ground Floor, Vetpet Clinic, Opp PMT Bus Stop, Near Harpale Clinic, Saswad Road, Bhekrai Nagar - Fursungi",
+    "phone": "8296111823",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/M2w12L5HMxYtYH9n8",
+    "speciality": "General veterinary: consultation & vaccination",
+    "keywords": ["general", "consultation", "vaccination"]
+  },
+  {
+    "name": "Goodwill Pet Clinic",
+    "area": "Kalewadi",
+    "address": "Ground Floor, Manjal Niwas, Near Maharashtra Biryani, BRT Road, Chatrapati Shivaji Maharaj Chowk, Kalewadi",
+    "phone": "8460524494",
+    "rating": 4.9,
+    "map_link": "https://maps.app.goo.gl/nnQCxRZdw8c6e5jRA",
+    "speciality": "General clinic: in-house pharmacy, routine surgery",
+    "keywords": ["general", "pharmacy", "surgery"]
+  },
+  {
+    "name": "My Pet Care Veterinary Center",
+    "area": "Hadapsar",
+    "address": "Sr No 201/24B, Near Toyota Showroom Next to Wisdom, DP Road, Hadapsar",
+    "phone": "7490904443",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/37JKg3CnJ8Myva4u7",
+    "speciality": "Multi-speciality: surgery, diagnostics, pharmacy",
+    "keywords": ["surgery", "diagnostics", "pharmacy"]
+  },
+  {
+    "name": "Fur N Feather",
+    "area": "Chinchwad East",
+    "address": "Devghandhar Apartment Sector No 18 Sambhaji Nagar, Shivaji Park, Sambhaji Nagar Road, Chinchwad East",
+    "phone": "9035088131",
+    "rating": 4.3,
+    "map_link": "https://maps.app.goo.gl/i6bSk5PjoGyn226R8",
+    "speciality": "Vet clinic + grooming: X-ray, blood tests, surgery",
+    "keywords": ["grooming", "x-ray", "blood tests", "surgery"]
+  },
+  {
+    "name": "Pet Care Clinic (Karve Nagar)",
+    "area": "Karve Nagar",
+    "address": "114, Sargam Society, Old Warje Naka Near Tree House Highschool, Karve Nagar",
+    "phone": "8511718157",
+    "rating": 4.3,
+    "map_link": "https://maps.app.goo.gl/D2hKNpiXh3qd6cKy5",
+    "speciality": "General clinic: preventive care & grooming",
+    "keywords": ["general", "preventive", "grooming"]
+  },
+  {
+    "name": "Pet Clinic 7 Bhu",
+    "area": "Manik Baug",
+    "address": "Shop No.8, Parimal Garden, Suncity Road, Manik Baug",
+    "phone": "9035215496",
+    "rating": 4.6,
+    "map_link": "https://maps.app.goo.gl/2Y6SL7FEqymMnFeq9",
+    "speciality": "General clinic: vaccination, surgery, grooming",
+    "keywords": ["vaccination", "surgery", "grooming", "general"]
+  },
+  {
+    "name": "Petfix Veterinary Clinic",
+    "area": "Bavdhan",
+    "address": "1/A, Ground Floor, Pentium Residency, Sagar Cooperative Housing Society, Bavdhan",
+    "phone": "8460470059",
+    "rating": 4.8,
+    "map_link": "https://maps.app.goo.gl/JELN8f1WEnQFHPTW6",
+    "speciality": "Full-service: surgery, radiology, diagnostics",
+    "keywords": ["surgery", "radiology", "diagnostics"]
+  },
+  {
+    "name": "Pet World Clinic (Sasoon Road)",
+    "area": "Sasoon Road",
+    "address": "Prince Garden, Near Residency Club, Sasoon Road",
+    "phone": "8511787141",
+    "rating": 4.3,
+    "map_link": "https://maps.app.goo.gl/Couo9CLjs4mEFaAc6",
+    "speciality": "Branch of Pet World Clinic (multi-speciality)",
+    "keywords": ["multi", "general"]
+  },
+  {
+    "name": "Pet Ozone Pet Clinic (Pimple Saudagar Branch)",
+    "area": "Pimple Saudagar",
+    "address": "Shop No 5, Rose Icon Commercial Complex, Pimple Saudagar",
+    "phone": "9035193886",
+    "rating": 4.7,
+    "map_link": "https://maps.app.goo.gl/s2Jif9tT19kkYPKZ7",
+    "speciality": "Branch of Pet Ozone Pet Clinic (multi-speciality)",
+    "keywords": ["multi", "surgery", "grooming"]
+  },
+  {
+    "name": "Pet Doc Vet Clinic (Baner Branch)",
+    "area": "Baner",
+    "address": "House No 4, Near Cellars Wine Shop, Pancard Club Road, Baner",
+    "phone": "9035177302",
+    "rating": 4.7,
+    "map_link": "https://maps.app.goo.gl/pX3MJ4D2BNQHsbdq9",
+    "speciality": "Branch of Pet Doc Vet Clinic (multi-speciality)",
+    "keywords": ["multi", "orthopaedic", "diagnostics"]
+  },
+  {
+    "name": "5 Star Pets And Pet Clinic",
+    "area": "Aundh",
+    "address": "Shop No 10A, Kings Square And Queens Tower Building, Near Medipoint Hospital, Aundh",
+    "phone": "9035075604",
+    "rating": 4.6,
+    "map_link": "https://maps.app.goo.gl/mZfTc8MDqqBNUArX8",
+    "speciality": "Multi-service: consultations, grooming, retail",
+    "keywords": ["consultation", "grooming", "retail", "general"]
+  },
+  {
+    "name": "Crown Vet",
+    "area": "Aundh",
+    "address": "Ground floor, Showroom 1, 104, KVP Sapatnekar Marg, Anand Park, Aundh, Pune, Maharashtra 411067",
+    "phone": "8062744103",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/Z4TgP8GAVXsmQUe56",
+    "speciality": "24x7 emergency medical care and high-tech diagnosis to planned surgeries and preventative care",
+    "keywords": ["emergency", "diagnosis", "surgery", "preventive", "24x7"]
+  },
+  {
+    "name": "Pawsitive Pet Clinic",
+    "area": "Shewalewadi",
+    "address": "Shop No 1, Ground Floor, Krushnakunj, Green Park, Solapur - Pune Hwy, opp. to Dreams Ragini, near MANJRI GREENS ANNEXE, Shewalewadi, phata, Maharashtra 412307",
+    "phone": "9525258080",
+    "rating": 4.9,
+    "map_link": "https://maps.app.goo.gl/1YAa58Dv1t1iMYRU6",
+    "speciality": "General practice + preventive care (vaccinations, wellness)",
+    "keywords": ["general", "preventive", "vaccination", "wellness"]
+  },
+  {
+    "name": "Animal Medical Services",
+    "area": "Kondhwa",
+    "address": "Narayan Annaji Shinde Rd, Kondhwa, Pune, Maharashtra 411048",
+    "phone": "02026850910",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/mSNr1CNujfgQAt6H6",
+    "speciality": "Small animal clinic offering routine care, diagnostics and minor surgery",
+    "keywords": ["small animal", "routine", "diagnostics", "surgery"]
+  },
+  {
+    "name": "Om Sai Pets Care Clinic",
+    "area": "Hadapsar",
+    "address": "DP Rd, opposite to Martand hotel, Gadital, Hadapsar, Pune, Maharashtra 411028",
+    "phone": "9860795768",
+    "rating": 4.8,
+    "map_link": "https://maps.app.goo.gl/GjB7zyTFW38ZvcLB6",
+    "speciality": "General companion animal care: consultations, vaccinations, minor procedures",
+    "keywords": ["consultation", "vaccination", "general", "minor procedures"]
+  },
+  {
+    "name": "AmVet Pet Clinic",
+    "area": "Hadapsar",
+    "address": "Shop no.12 upper floor, Ghule wines, Gandharva Galaxia, near KONARK VISTA, Amanora Park Town, Hadapsar, Pune, Maharashtra 411036",
+    "phone": "8483805227",
+    "rating": 5.0,
+    "map_link": "https://maps.app.goo.gl/b5GCMKvCjccWixwQ9",
+    "speciality": "Multi-speciality clinic: surgery, diagnostics, vaccinations",
+    "keywords": ["multi", "surgery", "diagnostics", "vaccination"]
+  },
+  {
+    "name": "Crown Vet Kalyani Nagar",
+    "area": "Kalyani Nagar",
+    "address": "Shop 4b, Hermes Waves, Survey 212/1b, Kalyaninagar, Pune, Maharashtra 411006",
+    "phone": "8062744102",
+    "rating": 4.1,
+    "map_link": "https://maps.app.goo.gl/XeimyuoS9zz5obZH7",
+    "speciality": "Branch of Crown Vet — general practice, vaccinations, minor surgery",
+    "keywords": ["general", "vaccination", "surgery", "branch"]
+  },
+  {
+    "name": "Tulpule's Pet Care Clinic",
+    "area": "Wanowrie",
+    "address": "CLOVER HEIGHTS, Salunke Vihar Rd, Oxford Village, Kedari Nagar, Wanowrie, Pune, Maharashtra 411022",
+    "phone": "9822077930",
+    "rating": 4.6,
+    "map_link": "https://maps.app.goo.gl/ygxG78fQYw9b4yWD7",
+    "speciality": "General & preventive veterinary care; routine surgery & diagnostics",
+    "keywords": ["general", "preventive", "surgery", "diagnostics"]
+  },
+  {
+    "name": "PET'S HEAVEN",
+    "area": "Magarpatta",
+    "address": "Flat No 203, Polaris Society, Bypass Rd, near Noble Hospital, Magarpatta, Pune, Maharashtra 411013",
+    "phone": "8380936968",
+    "rating": 4.1,
+    "map_link": "https://maps.app.goo.gl/TQtd1wR4WektFN3G7",
+    "speciality": "Clinic + grooming: routine checkups, vaccinations, grooming services",
+    "keywords": ["grooming", "vaccination", "checkup", "routine"]
+  },
+  {
+    "name": "Petville Pet Clinic",
+    "area": "Kharadi",
+    "address": "Shop no. 8 & 9 Fortune Plaza Opposite Forest County Society, Kharadi, Pune, Maharashtra 411014",
+    "phone": "8421932479",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/SeTEzBJnY5euF2pcA",
+    "speciality": "Full-service small animal clinic: consultations, vaccinations, diagnostics",
+    "keywords": ["consultation", "vaccination", "diagnostics", "full-service"]
+  },
+  {
+    "name": "PetCetera Small Animal Clinic",
+    "area": "NIBM Undri Road",
+    "address": "Lower Ground Floor, Ahura Building, Good Shepherd Church Lane, behind HDFC Bank, NIBM Undri Road, Pune, Maharashtra 411048",
+    "phone": "8975127200",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/YcdPvJHoEuELbh4A6",
+    "speciality": "Small animal clinic: surgery, diagnostics, in-house lab services",
+    "keywords": ["small animal", "surgery", "diagnostics", "lab"]
+  },
+  {
+    "name": "Vetic Pet Clinic",
+    "area": "Kalyani Nagar",
+    "address": "Plot 62, Samrat CHS, Lane No. 7, near Kalyani Nagar, Pune, Maharashtra 411006",
+    "phone": "9205845800",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/z3VxzV5sjT4R725FA",
+    "speciality": "General vet practice: vaccinations, wellness, minor procedures",
+    "keywords": ["general", "vaccination", "wellness", "minor procedures"]
+  },
+  {
+    "name": "Petaegis Veterinary Hospital",
+    "area": "Sinhgad Road",
+    "address": "Sr no - 19, Sinhgad Rd, behind Ranka Jeweller, Vitthalwadi, Hingne Khurd, Pune, Maharashtra 411051",
+    "phone": "9890124393",
+    "rating": 4.2,
+    "map_link": "https://maps.app.goo.gl/bNfNi6QspDXdgyNY9",
+    "speciality": "Multi-speciality animal hospital: ICU, surgery, endoscopy, advanced diagnostics",
+    "keywords": ["multi", "icu", "surgery", "endoscopy", "diagnostics"]
+  },
+  {
+    "name": "Raintree Veterinary Clinic and Rehabilitation Centre",
+    "area": "Ghorpadi",
+    "address": "Uday Baug, Ghorpadi, Pune, Maharashtra 411001",
+    "phone": "8830207984",
+    "rating": 4.0,
+    "map_link": "https://maps.app.goo.gl/LfyeRjsmRcgHTzaKA",
+    "speciality": "Rehabilitation + clinical care: physiotherapy/rehab, post-op care, general medicine",
+    "keywords": ["rehab", "physiotherapy", "post-op", "general"]
+  },
+  {
+    "name": "Healthy Tails Pet Clinic",
+    "area": "Kharadi",
+    "address": "HW6R+6V2, S no 52/2, beside OYO Shivsai Hotel, Ashoka Nagar, Kharadi, Pune, Maharashtra 411014",
+    "phone": "9503548194",
+    "rating": 4.9,
+    "map_link": "https://maps.app.goo.gl/8SCnpLCSq8r1F9xn6",
+    "speciality": "General practice: vaccinations, wellness checks, preventive care",
+    "keywords": ["general", "vaccination", "wellness", "preventive"]
+  },
+  {
+    "name": "Zigly",
+    "area": "Mohammed Wadi",
+    "address": "Shop No 5, Nibm Annex, VTP Celesta, Vibgyor School Rd, near V-Mart, Mohammed Wadi, Pune, Maharashtra 411060",
+    "phone": "8071265283",
+    "rating": 4.5,
+    "map_link": "https://maps.app.goo.gl/59Ko6NmvJoBfjYzr8",
+    "speciality": "Pet clinic + grooming / retail: grooming + routine consults",
+    "keywords": ["grooming", "retail", "consultation", "routine"]
+  },
+  {
+    "name": "Dr. S.B.'s Veterinary Clinic and Diagnostics",
+    "area": "Kothrud",
+    "address": "Shop No. 3, Abhay CHS, MIT Road, Rambaug Colony, Kothrud, Pune, Maharashtra 411038",
+    "phone": "7058035154",
+    "rating": 4.9,
+    "map_link": "https://maps.app.goo.gl/3uJtV28W2VVEK2o17",
+    "speciality": "Clinic with diagnostic services: X-ray, blood tests, routine surgeries",
+    "keywords": ["diagnostics", "x-ray", "blood test", "surgery"]
+  },
+  {
+    "name": "Blue Pulse Pet Clinic",
+    "area": "Rahatani",
+    "address": "Shop No. 07, Royal Imperio, 'E' Wing, Kokane Chowk, near Chitale Sweet, Rahatani, Pimpri-Chinchwad, Maharashtra 411017",
+    "phone": "9096259336",
+    "rating": 4.8,
+    "map_link": "https://maps.app.goo.gl/7eBq7BNy84bxWgrC9",
+    "speciality": "Full service: consultations, surgery, diagnostic tests; possible emergency care",
+    "keywords": ["consultation", "surgery", "diagnostics", "emergency"]
+  },
+  {
+    "name": "Tailsmen Veterinary Specialty",
+    "area": "Baner",
+    "address": "Row house no.6, Sayali Villa's, Lane no.2, Shreenath nagar, Baner, Pune, Maharashtra 411069",
+    "phone": "9175041239",
+    "rating": 4.6,
+    "map_link": "https://maps.app.goo.gl/t2ptfwrNwcGfzdyZ9",
+    "speciality": "Specialty centre: likely orthopaedics/soft-tissue surgery + general medicine",
+    "keywords": ["orthopaedic", "surgery", "soft-tissue", "specialty"]
+  },
+  {
+    "name": "Pet Aid",
+    "area": "Kalyani Nagar",
+    "address": "WoofTime, Bungalow No. 6, Kalyani Nagar Rd, next to Bank of Baroda, Kalyani Nagar, Pune, Maharashtra 411006",
+    "phone": "9168996110",
+    "rating": 4.3,
+    "map_link": "https://maps.app.goo.gl/FsChtoFSsjQ6jWqD9",
+    "speciality": "General practice & wellness; grooming and preventive care",
+    "keywords": ["general", "wellness", "grooming", "preventive"]
+  },
+  {
+    "name": "Starpugs Pet Care & Veterinary Services",
+    "area": "Dhankawadi",
+    "address": "Sawant Park Apartment, Pune - Satara Rd, near Vi care, Shridharnagar, Kala Nagar, Dhankawadi, Pune, Maharashtra 411043",
+    "phone": "9158198062",
+    "rating": 4.6,
+    "map_link": "https://maps.app.goo.gl/7LhZ71nEBVbdpEue9",
+    "speciality": "Small-breed focus + general veterinary services; grooming and breed-specific care",
+    "keywords": ["small breed", "grooming", "general", "care"]
+  },
+  {
+    "name": "Dr. Katre's Dogs And Cats Clinic",
+    "area": "Bibwewadi",
+    "address": "Shop No. 118, Dolphin Chowk, Purple Plaza, near Celebration Hotel, Upper, Chaitraban, Mahalaxmi Nagar, Bibwewadi, Pune, Maharashtra 411037",
+    "phone": "9850352519",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/QHq9FMjfNDD4Cich6",
+    "speciality": "Small animal clinic focused on dogs & cats: vaccinations, consultations, minor surgery",
+    "keywords": ["dogs", "cats", "vaccination", "consultation", "surgery"]
+  },
+  {
+    "name": "Fifth Sense Animal Health Care",
+    "area": "Kondhwa",
+    "address": "Shop No:29, BRAHMA MAJESTIC, NIBM Rd, NIBM Undri Road, Kausar Baugh, Kondhwa, Pune, Maharashtra",
+    "phone": "02026836147",
+    "rating": 4.4,
+    "map_link": "https://maps.app.goo.gl/Hce6HFSzdw3HuG316",
+    "speciality": "General & specialty clinic: likely surgery and diagnostics",
+    "keywords": ["general", "specialty", "surgery", "diagnostics"]
+  },
+  {
+    "name": "SMARTVET PET CLINIC & SURGICAL CENTRE",
+    "area": "Porwal Road",
+    "address": "Shop. No. 9, Tranquil park, Opp. Dmart ready, Porwal Rd, near Zudio, Pune, Maharashtra 411047",
+    "phone": "8208085090",
+    "rating": 4.9,
+    "map_link": "https://maps.app.goo.gl/uCYmpjMvfhjgXvJk7",
+    "speciality": "Surgery-focused clinic: soft-tissue & orthopaedic surgery + routine care",
+    "keywords": ["surgery", "orthopaedic", "soft-tissue", "routine"]
+  },
+  {
+    "name": "Dr. Vivek Pande's Pet Clinic (Shastri Nagar)",
+    "area": "Yerawada",
+    "address": "Loop Rd, Indira Park CHS, Mahindra Society, Yerawada, Pune, Maharashtra 411006",
+    "phone": "9823071004",
+    "rating": 4.3,
+    "map_link": "https://maps.app.goo.gl/2ajZxUiJMKeXt5d1A",
+    "speciality": "General practice: consultations, vaccinations, minor procedures",
+    "keywords": ["general", "consultation", "vaccination", "minor procedures"]
+  }
+]
