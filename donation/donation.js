@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
       // 🔹 Step 1: Create order via backend
-      const res = await fetch("http://localhost:8000/api/payments/create", {
+      const res = await fetch("https://pawcare-pet-animal-ecosystem.onrender.com/api/payments/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -161,7 +161,7 @@ console.log("Query Params:", window.location.search, "Parsed orderId:", orderId)
 
       // Redirect after 5s
       setTimeout(() => {
-        window.location.href = "../index/index.html";
+        window.location.href = "/index/index.html";
       }, 5000);
     }
   }
