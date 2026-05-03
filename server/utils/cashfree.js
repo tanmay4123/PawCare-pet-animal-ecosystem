@@ -1,9 +1,7 @@
 // server/utils/cashfree.js
 import crypto from "crypto";
-import dotenv from "dotenv";
 import fetch from "node-fetch"; // Only needed for Node < 18
 
-dotenv.config();
 
 const BASE_URL =
   process.env.GATEWAY_MODE === "sandbox"
