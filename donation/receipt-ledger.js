@@ -85,7 +85,7 @@
 
       // Redirect to homepage after 5s
       setTimeout(() => {
-        window.location.href = "/Index/index.html";
+        window.location.href = "/donation/donation.html";
       }, 5000);
     }
   });
