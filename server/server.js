@@ -122,8 +122,10 @@ app.use("/map", express.static(join(__dirname, "..", "map")));
 app.use("/dashboard", express.static(join(__dirname, "..", "dashboard")));
 
 // -------- DEFAULT ROUTE --------
+app.use(express.static(path.join(__dirname, '..')));
+
 app.get("/", (req, res) => {
-  res.send("✅ PawCare Auth + Payment Server is running...");
+  res.sendFile(path.join(__dirname, '..', 'Index', 'index.html'));
 });
 
 // -------- START SERVER --------
