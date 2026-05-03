@@ -31,7 +31,7 @@ registerForm.addEventListener('submit', async (e) => {
 
         if (data.success) {
             alert("Registration successful! Please login now.");
-            window.location.href = '../index/index.html';
+            window.location.href = '/Index/index.html';
         } else {
             alert(data.message || "Registration failed. Try again.");
         }
