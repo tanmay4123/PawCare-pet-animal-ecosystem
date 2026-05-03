@@ -175,7 +175,7 @@
   // 🧾 Load Top Donors on page load
   document.addEventListener("DOMContentLoaded", async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/payments/top");
+      const res = await fetch("https://pawcare-pet-animal-ecosystem.onrender.com/api/payments/top");
       const data = await res.json();
 
       if (data.success && Array.isArray(data.donations)) {
