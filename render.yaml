@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pae-care-node
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+
+  - type: web
+    name: pae-care-python
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
