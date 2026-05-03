@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else sessionStorage.setItem('user', JSON.stringify(data.user));
 
         showMessage(`🎉 Welcome back, ${data.user.name}!`, "success");
-        setTimeout(() => window.location.href = '../home/home.html', 800);
+        setTimeout(() => window.location.href = '/home/home.html', 800);
       } else {
         showMessage(`❌ ${data.message || 'Login failed'}`);
       }
@@ -67,6 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
   demoBtn.addEventListener('click', () => {
     const guestUser = { name: "Guest", email: "guest@pawcare.com" };
     localStorage.setItem('user', JSON.stringify(guestUser));
-    window.location.href = '../about/about.html';
+    window.location.href = '/about/about.html';
   });
 });
